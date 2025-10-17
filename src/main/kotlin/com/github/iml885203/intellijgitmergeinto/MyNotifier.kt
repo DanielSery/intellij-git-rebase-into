@@ -1,15 +1,9 @@
 package com.github.iml885203.intellijgitmergeinto
 
-import com.intellij.icons.AllIcons
 import com.intellij.notification.Notification
-import com.intellij.notification.NotificationAction
 import com.intellij.notification.NotificationGroupManager
 import com.intellij.notification.NotificationType
-import com.intellij.openapi.actionSystem.ActionManager
-import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.Project
-import com.intellij.vcs.console.ShowVcsConsoleTabAction
-import git4idea.actions.GitResolveConflictsAction
 
 class MyNotifier(private var project: Project) {
     fun notifyFailed(content: String) {

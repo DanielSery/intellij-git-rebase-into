@@ -110,7 +110,7 @@ class MergeIntoAction : AnAction() {
     private fun handleMergeFailure(ex: Exception, indicator: ProgressIndicator, currentBranch: String) {
         try {
             indicator.checkCanceled()
-        } catch (cancelEx: Exception) {
+        } catch (@Suppress("IncorrectCancellationExceptionHandling") _: Exception) {
             notifier.notifyFailed("Merge operation was cancelled.")
             return
         }
