@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.iml885203.intellijgitmergeinto</id>
-    <name>Git Merge Into</name>
+    <id>com.github.iml885203.intellijgitrebaseonto</id>
+    <name>Interactive Rebase Onto</name>
     <vendor>Logan</vendor>
 
     <depends>com.intellij.modules.platform</depends>
@@ -10,29 +10,13 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <notificationGroup id="Git Merge Into"
+        <notificationGroup id="Git Rebase"
                            displayType="BALLOON"
                            key="notification.group.name"/>
-        <applicationService
-                serviceImplementation="com.github.iml885203.intellijgitmergeinto.settings.AppSettings"/>
-        <applicationConfigurable
-                parentId="tools"
-                instance="com.github.iml885203.intellijgitmergeinto.settings.AppSettingsConfigurable"
-                id="com.github.iml885203.intellijgitmergeinto.settings.AppSettingsConfigurable"
-                displayName="Git Merge Into"/>
-
-        <projectService
-                serviceImplementation="com.github.iml885203.intellijgitmergeinto.settings.ProjectSettings"/>
-        <projectConfigurable
-                parentId="com.github.iml885203.intellijgitmergeinto.settings.AppSettingsConfigurable"
-                instance="com.github.iml885203.intellijgitmergeinto.settings.ProjectSettingsConfigurable"
-                id="com.github.iml885203.intellijgitmergeinto.settings.ProjectSettingsConfigurable"
-                displayName="Git Merge Into(Project)"/>
     </extensions>
 
     <actions>
-        <action class="com.github.iml885203.intellijgitmergeinto.actions.MergeIntoAction" id="com.github.iml885203.intellijgitmergeinto.actions.MergeIntoAction" text="Merge Into" icon="/icons/merge.svg">
-            <keyboard-shortcut keymap="$default" first-keystroke="alt G" second-keystroke="I"/>
+        <action class="com.github.iml885203.intellijgitmergeinto.actions.RebaseInteractiveIntoMasterAction" id="com.github.iml885203.intellijgitmergeinto.actions.RebaseInteractiveIntoMasterAction" text="Interactive Rebase Onto">
         </action>
     </actions>
 </idea-plugin>
