@@ -34,10 +34,7 @@ class RebaseInteractiveIntoMasterAction : AnAction() {
             "Rebase onto")
 
         if (!dialog.showAndGet()) {
-            NotificationGroupManager.getInstance()
-                .getNotificationGroup("Git Rebase")
-                .createNotification("Git rebase into failed", project.name, NotificationType.WARNING)
-                .notify(project)
+            return
         }
 
         val gitVersion = GitVcs.getInstance(project).version
